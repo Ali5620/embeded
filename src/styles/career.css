@@ -1,0 +1,51 @@
+/* Page background */
+.career-page {
+  min-height: 100vh;
+  background-color: #f3f3f3;
+  padding: 160px 24px 80px; /* top padding for fixed navbar */
+  box-sizing: border-box;
+}
+
+/* Content wrapper */
+.career-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Heading */
+.career-title {
+  font-size: 64px;
+  font-weight: 800;
+  letter-spacing: 6px;
+  color: #000;
+  margin-bottom: 32px;
+}
+
+/* Description text */
+.career-description {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Orange divider */
+.career-divider {
+  width: 160px;
+  height: 3px;
+  background-color: #f28c1c;
+  margin: 48px auto 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .career-title {
+    font-size: 44px;
+    letter-spacing: 4px;
+  }
+
+  .career-description {
+    font-size: 15px;
+  }
+}
