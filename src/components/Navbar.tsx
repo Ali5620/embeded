@@ -2,13 +2,16 @@ import type { FC } from "react";
 import { NavLink } from "react-router-dom";
 import "../styles/navbar.css";
 
+import logo from "../assets/logo1.png";
+
+
 const Navbar: FC = () => {
   return (
     <header className="navbar">
       {/* Logo */}
       <div className="navbar-logo">
         <NavLink to="/">
-          <img src="/logo.png" alt="SmartSoC" />
+          <img src={logo} alt="SmartSoC" className="logo" />
         </NavLink>
       </div>
 
