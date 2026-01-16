@@ -7,6 +7,7 @@ import Offerings from "./pages/Offerings";
 import Career from "./pages/Career";
 import Contact from "./pages/Contact";
 import Insights from "./pages/insights";
+import About from "./pages/About";
 
 const App: React.FC = () => {
   return (
@@ -19,6 +20,7 @@ const App: React.FC = () => {
           <Route path="/career" element={<Career />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/insights" element={<Insights />} />
+          <Route path="/about" element={<About/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
