@@ -1,5 +1,6 @@
 import { useState } from "react";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import "../styles/register.css"; // reuse same styles
 
 
@@ -8,6 +9,8 @@ import "../styles/register.css"; // reuse same styles
 const Register = () => {
   const [form, setForm] = useState({
 =======
+=======
+>>>>>>> f64b38ea8760280541bac693b7ae04b3954084a4
 import "../styles/login.css"; // reuse same styles
 import  type { RegisterFormData } from "../validators/registerSchema";
 import { registerSchema } from "../validators/registerSchema";
@@ -15,7 +18,10 @@ import { registerSchema } from "../validators/registerSchema";
 
 const Register = () => {
   const [formData, setFormData] = useState<RegisterFormData>({
+<<<<<<< HEAD
 >>>>>>> f64b38e (login and register form added with client side validation using zod)
+=======
+>>>>>>> f64b38ea8760280541bac693b7ae04b3954084a4
     name: "",
     username: "",
     email: "",
@@ -29,15 +35,20 @@ const Register = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 <<<<<<< HEAD
+<<<<<<< HEAD
     setForm({ ...form, [e.target.name]: e.target.value });
 =======
     setFormData({ ...formData, [e.target.name]: e.target.value });
 >>>>>>> f64b38e (login and register form added with client side validation using zod)
+=======
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+>>>>>>> f64b38ea8760280541bac693b7ae04b3954084a4
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     if (!form.name || !form.email || !form.password || !form.confirmPassword) {
       setError("All fields are required");
@@ -70,6 +81,8 @@ const Register = () => {
     setError("");
     alert("Registration successful ");
 =======
+=======
+>>>>>>> f64b38ea8760280541bac693b7ae04b3954084a4
     const result = registerSchema.safeParse(formData);
 
     if(!result.success){
@@ -79,7 +92,10 @@ const Register = () => {
     setError("")
     alert("Registration Successful");
    
+<<<<<<< HEAD
 >>>>>>> f64b38e (login and register form added with client side validation using zod)
+=======
+>>>>>>> f64b38ea8760280541bac693b7ae04b3954084a4
   };
 
   return (
@@ -94,11 +110,16 @@ const Register = () => {
         <input name="username" placeholder="Username" onChange={handleChange} />
         <input name="email" placeholder="Email" onChange={handleChange} />
 <<<<<<< HEAD
+<<<<<<< HEAD
         <input name="address" placeholder="Name" onChange={handleChange} />
 =======
         <input name="address" placeholder="Address" onChange={handleChange} />
         <input name="Phoneno" placeholder="Mobile no." onChange={handleChange} />
 >>>>>>> f64b38e (login and register form added with client side validation using zod)
+=======
+        <input name="address" placeholder="Address" onChange={handleChange} />
+        <input name="Phoneno" placeholder="Mobile no." onChange={handleChange} />
+>>>>>>> f64b38ea8760280541bac693b7ae04b3954084a4
         <input name="password" type="password" placeholder="Password" onChange={handleChange} />
         <input name="confirmPassword" type="password" placeholder="Confirm Password" onChange={handleChange} />
         
