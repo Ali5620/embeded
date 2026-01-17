@@ -1,134 +1,76 @@
 import { useState } from "react";
-<<<<<<< HEAD
-<<<<<<< HEAD
-import "../styles/register.css"; // reuse same styles
-
-
-
-
-const Register = () => {
-  const [form, setForm] = useState({
-=======
-=======
->>>>>>> f64b38ea8760280541bac693b7ae04b3954084a4
-import "../styles/login.css"; // reuse same styles
-import  type { RegisterFormData } from "../validators/registerSchema";
-import { registerSchema } from "../validators/registerSchema";
+import "../styles/login.css";
+import { registerSchema, type RegisterFormData } from "../validators/registerSchema";
 
 
 const Register = () => {
   const [formData, setFormData] = useState<RegisterFormData>({
-<<<<<<< HEAD
->>>>>>> f64b38e (login and register form added with client side validation using zod)
-=======
->>>>>>> f64b38ea8760280541bac693b7ae04b3954084a4
     name: "",
     username: "",
     email: "",
     address: "",
-    Phoneno:"",
+    Phoneno: "",
     password: "",
-    confirmPassword: ""
+    confirmPassword: "",
   });
 
   const [error, setError] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    setForm({ ...form, [e.target.name]: e.target.value });
-=======
-    setFormData({ ...formData, [e.target.name]: e.target.value });
->>>>>>> f64b38e (login and register form added with client side validation using zod)
-=======
-    setFormData({ ...formData, [e.target.name]: e.target.value });
->>>>>>> f64b38ea8760280541bac693b7ae04b3954084a4
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if (!form.name || !form.email || !form.password || !form.confirmPassword) {
-      setError("All fields are required");
-      return;
-    }
-    if(form.username.length < 8){
-        setError("Invalid Username");
-        return;
-    }
-    if(form.Phoneno.length < 10){
-        setError("Invalid Mobile number");
-        return;
-    }
+    const result = registerSchema.safeParse(formData);
 
-    if (!form.email.includes("@")) {
-      setError("Invalid email");
-      return;
-    }
-
-    if (form.password.length < 6) {
-      setError("Password must be at least 6 characters");
-      return;
-    }
-
-    if (form.password !== form.confirmPassword) {
-      setError("Passwords do not match");
+    if (!result.success) {
+      setError(result.error.errors[0].message);
       return;
     }
 
     setError("");
-    alert("Registration successful ");
-=======
-=======
->>>>>>> f64b38ea8760280541bac693b7ae04b3954084a4
-    const result = registerSchema.safeParse(formData);
-
-    if(!result.success){
-      setError(result.error.issues[0].message)
-    }
-
-    setError("")
-    alert("Registration Successful");
-   
-<<<<<<< HEAD
->>>>>>> f64b38e (login and register form added with client side validation using zod)
-=======
->>>>>>> f64b38ea8760280541bac693b7ae04b3954084a4
+    alert("Registration successful");
   };
 
   return (
     <div className="auth-page">
-    <div className="auth-container">
-      <h2>Register</h2>
+      <div className="auth-container">
+        <h2>Register</h2>
 
-      {error && <p className="error">{error}</p>}
+        {error && <p className="error">{error}</p>}
 
-      <form onSubmit={handleSubmit}>
-        <input name="name" placeholder="Name" onChange={handleChange} />
-        <input name="username" placeholder="Username" onChange={handleChange} />
-        <input name="email" placeholder="Email" onChange={handleChange} />
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <input name="address" placeholder="Name" onChange={handleChange} />
-=======
-        <input name="address" placeholder="Address" onChange={handleChange} />
-        <input name="Phoneno" placeholder="Mobile no." onChange={handleChange} />
->>>>>>> f64b38e (login and register form added with client side validation using zod)
-=======
-        <input name="address" placeholder="Address" onChange={handleChange} />
-        <input name="Phoneno" placeholder="Mobile no." onChange={handleChange} />
->>>>>>> f64b38ea8760280541bac693b7ae04b3954084a4
-        <input name="password" type="password" placeholder="Password" onChange={handleChange} />
-        <input name="confirmPassword" type="password" placeholder="Confirm Password" onChange={handleChange} />
-        
+        <form onSubmit={handleSubmit}>
+          <input name="name" placeholder="Name" onChange={handleChange} />
+          <input name="username" placeholder="Username" onChange={handleChange} />
+          <input name="email" placeholder="Email" onChange={handleChange} />
+          <input name="address" placeholder="Address" onChange={handleChange} />
+          <input name="Phoneno" placeholder="Mobile no." onChange={handleChange} />
+          <input
+            name="password"
+            type="password"
+            placeholder="Password"
+            onChange={handleChange}
+          />
+          <input
+            name="confirmPassword"
+            type="password"
+            placeholder="Confirm Password"
+            onChange={handleChange}
+          />
 
-        <button type="submit">Register</button>
-      </form>
-    </div>
+          <button type="submit">Register</button>
+        </form>
+      </div>
     </div>
   );
 };
 
 export default Register;
+
+
+
