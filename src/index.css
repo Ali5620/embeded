@@ -71,3 +71,10 @@ button:focus-visible {
   height: 200%;
   width: auto;
 }
+
+
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}

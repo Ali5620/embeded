@@ -4,7 +4,7 @@
   align-items: center;
 
   height: 90px;          
-  padding: 0 40px;      
+  padding: 0 2px;      
 
   position: fixed;
   top: 0;
@@ -40,4 +40,31 @@
 .logo{
   height: 200px;
   width: auto;
+}
+
+/* login and Register button */
+
+.auth-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;        /* 🔑 KEY LINE */
+}
+
+
+.btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login {
+  background: transparent;
+  border: 1px solid #4caf50;
+  color: #4caf50;
+}
+
+.register {
+  background: #4caf50;
+  color: white;
 }

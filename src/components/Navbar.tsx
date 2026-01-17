@@ -26,13 +26,21 @@ const Navbar: FC = () => {
         <NavLink to="/contact">Contact Us</NavLink>
         <NavLink to="/insights">Insights</NavLink>
         <NavLink to ="/about">About</NavLink>
+
+
+     
       </nav>
 
-      {/* Contact */}
+       <div className="auth-buttons">
+        <NavLink to="/login" className="btn login">Login</NavLink>
+        <NavLink to="/register" className="btn register">Register</NavLink>
+      </div>
+
+      {/* Contact
       <div className="navbar-contact">
         <span>080-49789412</span>
         <span>info@smartsocs.com</span>
-      </div>
+      </div> */}
     </header>
   );
 };
