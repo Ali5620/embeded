@@ -1,3 +1,5 @@
+import "../styles/home.css";
+
 const Home = () => {
   return (
     <div className="min-h-screen bg-[#1e1e1e] text-white">
